@@ -1,3 +1,4 @@
+#basic- this lists the people in each list
 friends = ["Chana Esther", "Esther Shira", "Tovi", "Giti"]
 favTeacher = ["Nussbaum", "Shwartz"]
 favArtist = ["Andrew Lloyd Webber", "Alain Boubil", "Claude Michel Shronberg", "Jackie Evancho"]
