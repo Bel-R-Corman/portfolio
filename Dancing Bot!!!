@@ -1,0 +1,30 @@
+/*
+ Robotics with the BOE Shield – LeftServoStayStill
+ Generate signal to make the servo stay still for centering.
+ */
+
+#include <Servo.h>                           // Include servo library
+ 
+Servo servoLeft;                             // Declare left servo
+Servo servoRight;
+
+
+void setup()                                 // Built in initialization block
+{
+  servoLeft.attach(12);                      // Attach left signal to pin 13
+  
+  servoRight.attach(13);
+  
+}  
+ 
+void loop()                                  // Main loop auto-repeats
+{ 
+  servoLeft.writeMicroseconds(1700);         // 1.5 ms stay still signal
+  servoRight.writeMicroseconds(1300);                                           // Empty, nothing needs repeating
+  delay(500);
+  servoLeft.writeMicroseconds(1300);         // 1.5 ms stay still signal
+  servoRight.writeMicroseconds(1700); // Empty, nothing needs repeating
+  delay(500);
+  servoLeft.writeMicroseconds(150);         // 1.5 ms stay still signal
+  servoRight.writeMicroseconds(150);  
+}
