@@ -1,0 +1,80 @@
+//const int buzzerPin = 1;
+#include <Servo.h>                      
+Servo servoLeft;
+Servo servoRight;
+//int RightWhisker = 9;
+//int LeftWhisker = 6;
+void setup()                                 
+{
+  Serial.begin(9600);
+//  pinMode(buzzerPin, OUTPUT);
+//  delay(1000);
+//  pinMode(RightWhisker , INPUT);
+//  pinMode(LeftWhisker , INPUT);
+  servoLeft.attach(12);
+  servoRight.attach(13);
+  servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
+  while (! Serial);
+  Serial.println("Press 8 to move forwards. Press 2 to move backwards. Press 4 to turn left. Press 6 to turn right. Press 0 to STOP.");       
+}  
+ 
+void loop()                                 
+{ 
+  if (Serial.available())
+  {int dir = Serial.parseInt();
+  if (dir == 8)
+  {forward(1000);}
+  if (dir == 2)
+  {backward(1000);}
+  if (dir == 4)
+  {turnLeft(1000);}
+  if (dir == 6)
+  {turnRight(1000);}
+  if (dir == 0)
+  {STOP(1000);}
+  }
+  //int wLeft = digitalRead(LeftWhisker);              
+ // int wRight = digitalRead(RightWhisker);  
+ // if (wLeft == 0)
+  //{tone(buzzerPin, 3000, 1000);
+ //   backward(1000);
+//    turnRight(1000);
+ // }
+ // else if (wRight == 0)
+  //{tone(buzzerPin, 3000, 1000);
+ //   backward(1000);
+ //   turnRight(1000);
+//  }
+  
+  
+  
+ 
+                        
+}
+
+
+void forward(int times)
+{ servoLeft.writeMicroseconds(2000);
+  servoRight.writeMicroseconds(1000); 
+  delay(times);}
+void backward(int times) 
+{ servoLeft.writeMicroseconds(1000);
+  servoRight.writeMicroseconds(2000);
+  delay(times);}
+
+void turnLeft(int times)
+{ servoLeft.writeMicroseconds(1000);
+  servoRight.writeMicroseconds(1000); 
+  delay(times);}
+
+void turnRight(int times)
+{ servoLeft.writeMicroseconds(2000);
+  servoRight.writeMicroseconds(2000);
+  delay(times);
+}
+
+void STOP(int times)
+{ servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
+  delay(times);}
