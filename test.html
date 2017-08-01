@@ -96,14 +96,14 @@
     let day2 = document.getElementById("day2");
     let day3 = document.getElementById("day3");
     let day4 = document.getElementById("day4");
-    let day5 = document.getElementById("day5");
+
     
     divReflection.style.visibility = "hidden";
     day1.style.visibility = "hidden";
     day2.style.visibility = "hidden";
     day3.style.visibility = "hidden";
     day4.style.visibility = "hidden";
-    day5.style.visibility = "hidden";
+
    
     function showReflections() {
     //aboutMe.style.display = "none";
@@ -111,16 +111,17 @@
     day2.style.visibility = "visible";
     day3.style.visibility = "visible";
     day4.style.visibility = "visible";
-    day5.style.visibility = "visible";
+
     
-    // if (aboutMe.style.display === "none"){
-    //     // aboutMe.style.display = "block";
-    //     // day1.style.visibility = "hidden";
-    //     // day2.style.visibility = "hidden";
-    //     // day3.style.visibility = "hidden";
-    //     // day4.style.visibility = "hidden";
-    //     // day5.style.visibility = "hidden";
-    //     }
+    if (aboutMe.style.display === "none"){
+        console.log("here");
+        // aboutMe.style.display = "block";
+        // day1.style.visibility = "hidden";
+        // day2.style.visibility = "hidden";
+        // day3.style.visibility = "hidden";
+        // day4.style.visibility = "hidden";
+        // day5.style.visibility = "hidden";
+        }
     }
     
     function aboutme() {
